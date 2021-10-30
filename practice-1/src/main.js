@@ -1,73 +1,33 @@
-// Input number
-let newNumber = prompt("Please input a number");
-console.log(`Number : ${newNumber}`);
-
-while (newNumber < 0 || newNumber >=0) {
-  if ( newNumber == "null") {
-    alert("Please input a number!");
-    newNumber = prompt("Please input a number");
-    console.log("Please input a number!");
-  } else if ( newNumber == '') {
-    alert("Please input a number!");
-    newNumber = prompt("Please input a number");
-    console.log("Please input a number!");
-  } else if ( newNumber < 0) {
-    alert("Please input a positive number!")
-    newNumber = prompt("Please input a number");
-    console.log("Please input a positive number!");
-  } else {
-    alert("Congratulations! You did it!");
-    console.log("Congratulations! You did it!");
-    break;
+// input number
+function checkNumber(value) {
+  if(typeof parseInt(value) !== "number") {
+      return false
   }
+  return true
+};
+
+var value = prompt("Please input a number");
+console.log(value);
+console.log(typeof parseInt(value));
+
+const isNumber = checkNumber(value);
+
+if (typeof isNumber !== 'number') {
+  alert("Please input a number")
+} else if (parseInt(value) < 0 ) {
+  alert ("please input positive number")
+} else {
+  alert("congratusion! you did it")
+};
+
+// Input email
+let email = prompt("Please input your email");
+let lastChart = email.charAt(email.length - 1 );
+
+if (email.length < 8 || email.charAt(0) == '@'
+  || lastChart == "@" || email.indexOf('@') == -1) {
+  alert("Your email is not valid")
 }
-
-
-// Input Email
-let newEmail = prompt("Please input your email");
-console.log(`Email: ${newEmail}`);
-let count = 0;
-let numCo = 0;
-let lastChart = newEmail.charAt(newEmail.length - 1 );
-console.log(lastChart);
-
-for (count = 0; count < newEmail.length; count++) {
-  if (newEmail.charAt(count) == "@"){
-    numCo++;
-  }
-}
-
-if (numCo != 1 || newEmail.length <= 8
-  || newEmail.charAt(0) == "@" || lastChart == "@") {
-  alert("Your email is not valid");
-}
-
-
-
-// if (numCo != 1) {
-//   alert("Your email is not valid");
-//   newEmail = prompt("Please input your email");
-//   console.log(`Email: ${newEmail}`);
-//   console.log(lastChart);
-// }
-
-// while (numCo == 1) {
-//   if (newEmail.length <= 8) {
-//     alert("Your email is not valid");
-//     newEmail = prompt("Please input your email");
-//     console.log(`Email: ${newEmail}`);
-//     console.log(lastChart);
-//   } else if (newEmail.charAt(0) == "@") {
-//     alert("Your email is not valid");
-//     newEmail = prompt("Please input your email");
-//     console.log(`Email: ${newEmail}`);
-//     console.log(lastChart);
-//   } else if (lastChart == "@") {
-//     alert("Your email is not valid");
-//     newEmail = prompt("Please input your email");
-//     console.log(`Email: ${newEmail}`);
-//     console.log(lastChart);
-//   } else {
-//     break;
-//   }
-// }
+else {
+  alert("Congrats!")
+};

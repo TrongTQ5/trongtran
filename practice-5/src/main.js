@@ -1,21 +1,29 @@
+// Calculate the average mark
+function calAverage(math, physical, chemistry) {
+  let pntMath = parseFloat(math);
+  let pntPhys = parseFloat(physical);
+  let pntChem = parseFloat(chemistry);
+  let averageMark = (pntMath + pntPhys + pntChem) / 3;
+  let aveMark = averageMark.toFixed(1);
+  return aveMark;
+}
+
+// Rank
+function rank(aveMark) {
+  if (aveMark >= 8.0) {
+    return alert(`Your average mark is ${aveMark}. Your rank is: A`);
+  } else if (aveMark >= 6.5) {
+    return alert(`Your average mark is ${aveMark}. Your rank is: B`);
+  } else if (aveMark >= 5.0) {
+    return alert(`Your average mark is ${aveMark}. Your rank is: C`);
+  } else {
+    return alert(`Your average mark is ${aveMark}. Your rank is: D`);
+  }
+}
+
 let pointMath = prompt("Please input point for Math");
 let pointPhys = prompt("Please input point for Physical");
 let pointChem = prompt("Please input point for Chemistry");
 
-let pntMath = parseFloat(pointMath);
-let pntPhys = parseFloat(pointPhys);
-let pntChem = parseFloat(pointChem);
-
-let averageMark = (pntMath + pntPhys + pntChem) / 3;
-console.log(averageMark);
-let aveMark = averageMark.toFixed(1);
-
-if (aveMark >= 8.0) {
-  alert(`Your average mark is ${aveMark}. Your rank is: A`);
-} else if (aveMark >= 6.5) {
-  alert(`Your average mark is ${aveMark}. Your rank is: B`);
-} else if (aveMark >= 5.0) {
-  alert(`Your average mark is ${aveMark}. Your rank is: C`);
-} else {
-  alert(`Your average mark is ${aveMark}. Your rank is: D`);
-}
+console.log(calAverage(pointMath, pointPhys, pointChem));
+rank(calAverage(pointMath, pointPhys, pointChem));
